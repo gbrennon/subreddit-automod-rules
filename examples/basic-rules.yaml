@@ -1,0 +1,17 @@
+globals:
+  moderators_exempt: false
+rules:
+  - type: submission
+    author:
+      is_moderator: true
+    action: filter
+    action_reason: "TEAM POLICY: moderator post requires review"
+    modmail_subject: "Moderator post pending review: {{title}}"
+    modmail: |
+      Moderator u/{{author}} submitted {{permalink}}.
+
+      This post requires review by another moderator.
+  - type: comment
+    body (regex): '(buy followers|free crypto giveaway)'
+    action: spam
+    action_reason: "Promotional spam"

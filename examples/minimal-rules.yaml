@@ -1,0 +1,7 @@
+globals:
+  moderators_exempt: true
+rules:
+  - type: submission
+    title (regex): '^test$'
+    action: filter
+    action_reason: "Test title"
